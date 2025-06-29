@@ -99,7 +99,9 @@ end_minute = end_minute % 60
 end_hour = end_hour % 24
 
 # 요리 완성 시간 출력
-print(f"요리가 완성될 시간은 {end_hour}시 {end_minute}분 입니다.")
+print(end_hour, end_minute)
+
+# print(f"요리가 완성될 시간은 {end_hour}시 {end_minute}분 입니다.")
 
 
 
