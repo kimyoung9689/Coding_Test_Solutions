@@ -1,6 +1,6 @@
 import os
 import re
-import requests
+# import requests # requests 모듈은 이제 필요 없으니 삭제하거나 주석 처리
 
 ROOT_DIR = os.getcwd()
 BASE_BAEKJOON_DIR = os.path.join(ROOT_DIR, '백준', 'Bronze')
@@ -16,39 +16,20 @@ problem_titles = {
     '25314': '코딩은 체육과목입니다',
 }
 
-def get_baekjoon_problem_info(problem_num):
-    url = f"https://www.acmicpc.net/problem/{problem_num}"
-    try:
-        response = requests.get(url, timeout=5)
-        response.raise_for_status()
-        html_content = response.text
-        title_match = re.search(r'<span id="problem_title">([^<]+)</span>', html_content)
-        title = title_match.group(1).strip() if title_match else f"문제 {problem_num} 제목 없음"
-        problem_desc_match = re.search(r'<div id="problem_description" class="problem-text">([\s\S]*?)</div>', html_content)
-        problem_desc = problem_desc_match.group(1).strip() if problem_desc_match else "문제 설명 없음"
-        problem_desc = re.sub(r'<[^>]+>', '', problem_desc)
-        problem_desc = problem_desc.replace('&lt;', '<').replace('&gt;', '>')
-        problem_desc = problem_desc.replace('&amp;', '&')
-        return {
-            'title': title,
-            'description': problem_desc,
-            'link': url
-        }
-    except requests.exceptions.RequestException as e:
-        return None
+# 웹 스크래핑 함수 (get_baekjoon_problem_info)는 이제 필요 없으니 삭제하거나 주석 처리
+# def get_baekjoon_problem_info(problem_num):
+#     # ... (이전 코드 내용) ...
+#     return None # 항상 None을 반환하도록 변경하거나 함수 자체를 삭제
 
-def create_readme_file(folder_path, problem_num, problem_title, problem_info=None):
+def create_readme_file(folder_path, problem_num, problem_title): # problem_info 인자 삭제
     readme_path = os.path.join(folder_path, 'README.md')
     if os.path.exists(readme_path):
         return
 
     content = f"# 백준 {problem_num}번: {problem_title}\n\n"
-    if problem_info:
-        content += f"## 문제 설명\n{problem_info['description']}\n\n"
-        content += f"--- \n"
-        content += f"**[백준 문제 링크]({problem_info['link']})**\n"
-    else:
-        content += f"문제 정보 가져오기 실패 또는 없음. [백준 문제 링크](https://www.acmicpc.net/problem/{problem_num})\n"
+    # 문제 설명 대신, 링크만 바로 넣음
+    content += f"--- \n"
+    content += f"**[백준 문제 링크](https://www.acmicpc.net/problem/{problem_num})**\n"
 
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -60,5 +41,5 @@ for folder_name in os.listdir(BASE_BAEKJOON_DIR):
         if match:
             problem_num = match.group(1)
             problem_title = problem_titles.get(problem_num, '알 수 없는 문제 제목')
-            problem_info = get_baekjoon_problem_info(problem_num)
-            create_readme_file(folder_path, problem_num, problem_title, problem_info)
+            # problem_info = get_baekjoon_problem_info(problem_num) # 문제 정보 가져오는 부분 삭제
+            create_readme_file(folder_path, problem_num, problem_title) # problem_info 인자 삭제

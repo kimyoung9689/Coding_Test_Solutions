@@ -1,3 +1,4 @@
 # 백준 18108번: 1998년생인 내가 태국에서는 2541년생?!
 
-문제 정보 가져오기 실패 또는 없음. [백준 문제 링크](https://www.acmicpc.net/problem/18108)
+--- 
+**[백준 문제 링크](https://www.acmicpc.net/problem/18108)**

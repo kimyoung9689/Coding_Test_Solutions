@@ -1,3 +1,4 @@
 # 백준 1002번: 터렛
 
-문제 정보 가져오기 실패 또는 없음. [백준 문제 링크](https://www.acmicpc.net/problem/1002)
+--- 
+**[백준 문제 링크](https://www.acmicpc.net/problem/1002)**
