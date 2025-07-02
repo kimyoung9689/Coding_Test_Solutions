@@ -11,6 +11,7 @@ Skill Enhancement: Continuously improve algorithm and data structure proficiency
 Code Quality: Develop a habit of writing readable and efficient code.
 
 Directory Structure
+```
 Competitive_Programming_Solutions/
 ├── Baekjoon/
 │   ├── Bronze/
@@ -30,7 +31,9 @@ Competitive_Programming_Solutions/
 │   └── workflows/
 │       └── auto_sync.yml
 └── README.md
-Within each platform's directory (e.g., Baekjoon), you'll find folders organized by difficulty (e.g., Bronze, Silver). Inside these, individual problem folders ([Problem_Number]_Problem_Name) contain the solution files (.py).
+```
+
+Within each platform's directory (e.g., Baekjoon), you'll find folders organized by difficulty (e.g., Bronze, Silver). Inside these, individual problem folders (\[Problem_Number]_Problem_Name) contain the solution files (.py).
 
 Tech Stack
 Python: Used for problem-solving and automation scripts.
