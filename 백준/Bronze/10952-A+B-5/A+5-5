@@ -1,0 +1,8 @@
+import sys # 모듈 임포트
+
+
+while True: # 무한 반복
+ a, b = map(int,sys.stdin.readline().split()) # 공백 기준으로 쪼개 a와 b 숫자로 입력 받기
+ if a == 0 and b == 0: # 두 개가 입력 되면
+    break # 반복문 끊기
+ print(a + b) 
